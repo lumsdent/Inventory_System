@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+//Attach to Game Object
 public class SaveableEntity : MonoBehaviour
 {
 
@@ -11,12 +12,13 @@ public class SaveableEntity : MonoBehaviour
 
     public string Id => id;
 
-    
+    //creates a universal id to identify data in database
     private void GenerateId()
     {
         id = Guid.NewGuid().ToString();
     }
 
+    //Save load all ISaveable data on Game Object
     public object SaveEntity()
     {
         var state = new Dictionary<string, object>();
